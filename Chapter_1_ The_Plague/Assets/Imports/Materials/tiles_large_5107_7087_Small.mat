@@ -8,17 +8,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: tiles_large_5107_7087_Small
-  m_Shader: {fileID: 4800000, guid: 447fef9edcd98e346b21881ad3e44014, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 2b3b7d0b179748b449e12721ea4fcfa6, type: 3}
   m_ShaderKeywords: _FOG_ON _LIGHTING_BAKED_ON _LIGHTING_DYNAMIC_ON _SHADING_EVALUATION_MODE_PER_VERTEX
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_4450AB74:
+        m_Texture: {fileID: 2800000, guid: 0b25c1db96012fa4aa3f05112a208da7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -36,6 +40,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_193028D2: 1
+    - Boolean_3F1A8DAB: 1
+    - Boolean_43476D73: 1
+    - Boolean_7165A49C: 0
+    - Boolean_85059BBE: 1
+    - Boolean_8BBF99CD: 1
+    - Boolean_D258FF8E: 0
+    - Vector1_21C41D02: 64
+    - Vector1_6F288C5B: 0
+    - Vector1_B2CC132F: 16
+    - Vector1_B9994903: 11
+    - Vector1_E8746023: 16
     - _AffineTextureWarpingWeight: 1
     - _AlphaClip: 0
     - _AlphaClippingDitherIsEnabled: 0
@@ -58,6 +74,8 @@ Material:
     - _VertexColorMode: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_2E5415DE: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
+    - Vector2_8044833E: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _MainColor: {r: 0.6792453, g: 0.5820363, b: 0.4773941, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
