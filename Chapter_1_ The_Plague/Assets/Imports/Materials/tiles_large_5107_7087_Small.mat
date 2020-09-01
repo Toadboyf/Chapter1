@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: tiles_large_5107_7087_Small
+  m_Shader: {fileID: 4800000, guid: 447fef9edcd98e346b21881ad3e44014, type: 3}
+  m_ShaderKeywords: _FOG_ON _LIGHTING_BAKED_ON _LIGHTING_DYNAMIC_ON _SHADING_EVALUATION_MODE_PER_VERTEX
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _EmissionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0b25c1db96012fa4aa3f05112a208da7, type: 3}
+        m_Scale: {x: 0.5, y: 0.5}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionCubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AffineTextureWarpingWeight: 1
+    - _AlphaClip: 0
+    - _AlphaClippingDitherIsEnabled: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _Cull: 2
+    - _DstBlend: 0
+    - _EmissionBakedMultiplier: 1
+    - _FogWeight: 1
+    - _LightingBaked: 1
+    - _LightingDynamic: 1
+    - _LightingMode: 0
+    - _PrecisionGeometryWeight: 1
+    - _Reflection: 0
+    - _ReflectionBlendMode: 0
+    - _RenderQueueCategory: 0
+    - _ShadingEvaluationMode: 0
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _VertexColorMode: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _MainColor: {r: 0.6792453, g: 0.5820363, b: 0.4773941, a: 1}
+    - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
