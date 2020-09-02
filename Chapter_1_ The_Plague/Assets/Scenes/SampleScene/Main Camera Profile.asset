@@ -26,14 +26,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a1bd58dd7548198609eabd8ae2bb7d, type: 3}
   m_Name: Pixelation
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   widthPixelation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 640
   heightPixelation:
-    m_OverrideState: 1
-    m_Value: 480
+    m_OverrideState: 0
+    m_Value: 420
   colorPrecision:
-    m_OverrideState: 1
-    m_Value: 32
+    m_OverrideState: 0
+    m_Value: 48
