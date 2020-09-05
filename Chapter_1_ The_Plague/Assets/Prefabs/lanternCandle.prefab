@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5459103002115130228
 Transform:
@@ -93,13 +93,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5496669994842689378}
   - component: {fileID: 5496669994842689437}
-  - component: {fileID: 5496669994842689436}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5496669994842689378
 Transform:
@@ -161,7 +160,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -172,23 +171,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.7841e-41, z: 0, w: -0.0000000021682354}
+  m_BoundingSphereOverride: {x: 0, y: 1.7567e-41, z: 0, w: -0.0000000021682354}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &5496669994842689436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5496669994842689379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98ab2d31170f6a49997506f31a9b733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 5496669994842689437}
-  minIntensity: 0
-  maxIntensity: 1
-  smoothing: 30

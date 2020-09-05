@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2018582881391826977
 Transform:
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.344754, y: 7.7652144, z: 2.1999996}
-  m_Center: {x: 2.5723772, y: 3.8826072, z: 0.99999994}
+  m_Size: {x: 5.344754, y: 14.321728, z: 2.1999996}
+  m_Center: {x: 2.5723772, y: 7.160864, z: 1}
 --- !u!114 &1677769819895300764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,13 +1904,12 @@ GameObject:
   - component: {fileID: 5732015453883019036}
   - component: {fileID: 5732015453883019037}
   - component: {fileID: 5732015453883019026}
-  - component: {fileID: 5732015453883019027}
   m_Layer: 0
   m_Name: InfirmaryCot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5732015453883019039
 Transform:
@@ -1921,7 +1920,7 @@ Transform:
   m_GameObject: {fileID: 5732015453883019024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.499, y: 0, z: 9.553}
-  m_LocalScale: {x: 1, y: 0.4587, z: 1}
+  m_LocalScale: {x: 1, y: 0.45869994, z: 1}
   m_Children:
   - {fileID: 2018582881391826977}
   m_Father: {fileID: 0}
@@ -2191,18 +2190,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732015453883019024}
-  m_Mesh: {fileID: 0}
---- !u!64 &5732015453883019027
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5732015453883019024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
