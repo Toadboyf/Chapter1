@@ -26,10 +26,10 @@ MonoBehaviour:
   m_Name: UniversalRenderPipelineAsset_Renderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: -5473483169284902855}
   - {fileID: 1574125901457766853}
+  - {fileID: -5473483169284902855}
   - {fileID: 8641863538223465232}
-  m_RendererFeatureMap: 39b0b1aa0e480ab4c5b921d42a6bd81510c335f91911ee77
+  m_RendererFeatureMap: c5b921d42a6bd81539b0b1aa0e480ab410c335f91911ee77
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a17da147615463497e4bd9e04f0dce1, type: 3}
   m_Name: NewDitheringRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
 --- !u!114 &8641863538223465232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,4 +76,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6534dd185a4f18b50629b58de296b6, type: 3}
   m_Name: NewPixelationRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
