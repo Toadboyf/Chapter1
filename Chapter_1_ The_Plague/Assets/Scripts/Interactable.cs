@@ -10,11 +10,13 @@ public class Interactable : MonoBehaviour
     public LayerMask newCullMask;
     public Transform floatingPos;
     public float rotSpeed;
-    public string disabledPrompt;
-    public string prompt;
-    public bool disabled;
+    public string normalPrompt;
+    public string grabPrompt;
+    public bool notRetrievable;
     bool looking;
     public bool waitingForInput;
+    public bool required;
+    public Interactable itemToOpen;
     Vector3 camStartingPos;
     Quaternion camStartingRot;
     LayerMask camMask;
@@ -40,7 +42,7 @@ public class Interactable : MonoBehaviour
                 waitingForInput = false;
                 waitASec = 0;
                 Time.timeScale = 1;
-                if(textPrompt.text == prompt)
+                if(textPrompt.text == grabPrompt)
                 {
                     textPrompt.text = "";
                 }
@@ -48,17 +50,22 @@ public class Interactable : MonoBehaviour
                 Camera.main.transform.rotation = camStartingRot;
                 Camera.main.cullingMask = camMask;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>().heldItems.Add(this);
+                //if a required object, open the object affected before destroy
+                if(required)
+                {
+                    itemToOpen.notRetrievable = false;
+                }
                 Destroy(gameObject);
             }
         }
     }
     public void Interact()
     {
-        if(!looking && !disabled)
+        if(!looking && !notRetrievable)
         {
             looking = true;
             //Set text for UI while looking at object
-            textPrompt.text = prompt;
+            textPrompt.text = grabPrompt;
             //Set Camera pos and rot to zoom in on object
             camStartingPos = Camera.main.transform.position;
             camStartingRot = Camera.main.transform.rotation;
@@ -67,18 +74,21 @@ public class Interactable : MonoBehaviour
             //While camera zoomed on object, cull Player model from rendering
             camMask = Camera.main.cullingMask;
             Camera.main.cullingMask = newCullMask;
+            //Disable Item Collider
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             //Set obj position to floating one
             transform.position = floatingPos.position;
+            transform.rotation = floatingPos.rotation;
             //Set waitingforinput
             waitingForInput = true;
             //disable player movement
             Time.timeScale = 0;
         }
-        else if(disabled)
+        else if(notRetrievable)
         {
-            if(textPrompt.text != disabledPrompt)
+            if(textPrompt.text != normalPrompt)
             {
-                textPrompt.text = disabledPrompt;
+                textPrompt.text = normalPrompt;
                 StartCoroutine(PromptTimer());
             }
         }
@@ -87,7 +97,7 @@ public class Interactable : MonoBehaviour
     IEnumerator PromptTimer()
     {
         yield return new WaitForSecondsRealtime(3f);
-        if(textPrompt.text == disabledPrompt)
+        if(textPrompt.text == normalPrompt)
         {
             textPrompt.text = "";
         }

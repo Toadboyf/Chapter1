@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerHead
   - UIPopup
+  - Note
+  - door
   layers:
   - Default
   - TransparentFX
