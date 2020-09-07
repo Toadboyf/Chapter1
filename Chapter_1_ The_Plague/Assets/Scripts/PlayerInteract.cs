@@ -36,16 +36,7 @@ public class PlayerInteract : MonoBehaviour
                                 closestAngle = tempAngle;
                             }
                         }
-                        if(closestTarget.gameObject.tag == "door")
-                        {
-                            //have reaction with door instead of picking up an object
-                            //Call door script
-                        }
-                        else
-                        {
-                            //Act on closestTarget
-                            closestTarget.gameObject.GetComponent<Interactable>().Interact();
-                        }
+                        closestTarget.gameObject.GetComponent<Interactable>().Interact();
                     }
                 }
             }

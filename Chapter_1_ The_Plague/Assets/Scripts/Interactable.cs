@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour
 {
+    AudioSource gmAudio;
     Text textPrompt;
     public Transform cameraShot;
     public LayerMask newCullMask;
@@ -13,10 +14,16 @@ public class Interactable : MonoBehaviour
     public string normalPrompt;
     public string grabPrompt;
     public bool notRetrievable;
+    public AudioClip pickupSound;
     bool looking;
     public bool waitingForInput;
     public bool required;
+    //if its a trigger do something else
+    //ie triggers a cutscene
+    public bool isTrigger;
+    public StealCamera triggered;
     public Interactable itemToOpen;
+    public bool isExit;
     Vector3 camStartingPos;
     Quaternion camStartingRot;
     LayerMask camMask;
@@ -24,6 +31,7 @@ public class Interactable : MonoBehaviour
 
     void Awake()
     {
+        gmAudio = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
         GameObject ui = GameObject.FindGameObjectWithTag("UIPopup");
         textPrompt = ui.GetComponent<Text>();
     }
@@ -55,13 +63,25 @@ public class Interactable : MonoBehaviour
                 {
                     itemToOpen.notRetrievable = false;
                 }
+                gmAudio.PlayOneShot(pickupSound);
                 Destroy(gameObject);
             }
         }
     }
     public void Interact()
     {
-        if(!looking && !notRetrievable)
+        if(isExit)
+        {
+            //Player must have items to proceed
+            
+
+        }
+        else if(isTrigger)
+        {
+            triggered.StartCutscene();
+            isTrigger = false;
+        }
+        else if(!looking && !notRetrievable)
         {
             looking = true;
             //Set text for UI while looking at object

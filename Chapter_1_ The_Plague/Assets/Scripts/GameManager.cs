@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour
     public Text UIPopup;
     public PlayerInteract playerScript;
     public AudioClip knockSound;
+    public AudioClip guyDisappear;
     AudioSource audioSource;
     bool pressed;
-
+    public AudioSource ambience;
     public Transform spawnCamZone;
     public Transform spawnManZone;
     public GameObject man;
@@ -48,7 +49,9 @@ public class GameManager : MonoBehaviour
             if(Camera.main.transform.position == spawnCamZone.position)
             {
                 Destroy(spawnedGuy);
-                
+                //Play guydisappear noise
+                audioSource.PlayOneShot(guyDisappear);
+                playerScript.gameObject.GetComponent<Animator>().speed = 1f;
             }
         }
     }
@@ -74,10 +77,12 @@ public class GameManager : MonoBehaviour
         blackScreen.enabled = false;
         UIPopup.text = "";
         playerScript.disabled = false;
+        ambience.gameObject.SetActive(true);
     }
 
     public void SpawnManInHouse()
     {
         spawnedGuy = Instantiate(man, spawnManZone.position, Quaternion.identity);
+        playerScript.gameObject.GetComponent<Animator>().speed = .5f;
     }
 }
