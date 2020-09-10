@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
     public AudioClip doorClose;
     AudioSource doorAudio;
     public GameManager gameManager;
+    public Interactable oppositeDoor;
 
     void Awake()
     {
@@ -17,11 +18,13 @@ public class DoorScript : MonoBehaviour
     public void OpenDoor()
     {
         doorAudio.PlayOneShot(doorOpen);
+        GetComponent<Interactable>().enabled = false;
     }
 
     public void CloseDoor()
     {
         doorAudio.PlayOneShot(doorClose);
-        GetComponent<Interactable>().enabled = false;
+        oppositeDoor.enabled = true;
+        gameManager.player.transform.position = gameManager.outsidePos.position;
     }
 }

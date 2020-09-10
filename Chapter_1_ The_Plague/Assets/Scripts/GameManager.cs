@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public Image blackScreen;
     public Text UIPopup;
-    GameObject player;
+    public GameObject player;
     public PlayerInteract playerScript;
     WalkingScript playerWalk;
     public AudioClip knockSound;
@@ -103,12 +103,12 @@ public class GameManager : MonoBehaviour
     public IEnumerator AreaTransition()
     {
         yield return new WaitForSecondsRealtime(2f);
-        doorScript.CloseDoor();
         blackScreen.enabled = false;
         player.transform.position = outsidePos.position;
         playerScript.disabled = false;
         playerWalk.disabled = false;
         outsideShot.CutToShot();
         ambience.volume = .6f;
+        doorScript.CloseDoor();
     }
 }
