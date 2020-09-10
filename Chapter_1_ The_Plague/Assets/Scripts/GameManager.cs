@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public Image blackScreen;
     public Text UIPopup;
+    GameObject player;
     public PlayerInteract playerScript;
+    WalkingScript playerWalk;
     public AudioClip knockSound;
     public AudioClip guyDisappear;
     AudioSource audioSource;
@@ -17,11 +19,15 @@ public class GameManager : MonoBehaviour
     public Transform spawnManZone;
     public GameObject man;
     GameObject spawnedGuy;
+    public DoorScript doorScript;
+    public Transform outsidePos;
+    public Shot outsideShot;
 
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        Application.targetFrameRate = 30;
+        playerWalk = playerScript.gameObject.GetComponent<WalkingScript>();
+        player = playerScript.gameObject;
         audioSource = GetComponent<AudioSource>();
         //Start game with black screen
         playerScript.disabled = true;
@@ -51,7 +57,6 @@ public class GameManager : MonoBehaviour
                 Destroy(spawnedGuy);
                 //Play guydisappear noise
                 audioSource.PlayOneShot(guyDisappear);
-                playerScript.gameObject.GetComponent<Animator>().speed = 1f;
             }
         }
     }
@@ -83,6 +88,27 @@ public class GameManager : MonoBehaviour
     public void SpawnManInHouse()
     {
         spawnedGuy = Instantiate(man, spawnManZone.position, Quaternion.identity);
-        playerScript.gameObject.GetComponent<Animator>().speed = .5f;
+    }
+
+    public void ScreenTransition()
+    {
+        doorScript.OpenDoor();
+        UIPopup.text = "";
+        playerScript.disabled = true;
+        playerWalk.disabled = true;
+        blackScreen.enabled = true;
+        StartCoroutine(AreaTransition());
+    }
+    
+    public IEnumerator AreaTransition()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        doorScript.CloseDoor();
+        blackScreen.enabled = false;
+        player.transform.position = outsidePos.position;
+        playerScript.disabled = false;
+        playerWalk.disabled = false;
+        outsideShot.CutToShot();
+        ambience.volume = .6f;
     }
 }

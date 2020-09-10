@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
 
-    public List<Interactable> heldItems = new List<Interactable>();
+    public List<string> heldItems = new List<string>();
     public Transform checkPos;
     public float checkRadius;
     public LayerMask interactableMask;

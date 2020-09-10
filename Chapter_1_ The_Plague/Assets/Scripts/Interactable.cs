@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
 {
     AudioSource gmAudio;
     Text textPrompt;
+    PlayerInteract playerScript;
     public Transform cameraShot;
     public LayerMask newCullMask;
     public Transform floatingPos;
@@ -28,12 +29,14 @@ public class Interactable : MonoBehaviour
     Quaternion camStartingRot;
     LayerMask camMask;
     int waitASec = 400;
+    public string heldName;
 
     void Awake()
     {
         gmAudio = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
         GameObject ui = GameObject.FindGameObjectWithTag("UIPopup");
         textPrompt = ui.GetComponent<Text>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
     }
     void Update()
     {
@@ -57,7 +60,7 @@ public class Interactable : MonoBehaviour
                 Camera.main.transform.position = camStartingPos;
                 Camera.main.transform.rotation = camStartingRot;
                 Camera.main.cullingMask = camMask;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>().heldItems.Add(this);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>().heldItems.Add(heldName);
                 //if a required object, open the object affected before destroy
                 if(required)
                 {
@@ -73,8 +76,20 @@ public class Interactable : MonoBehaviour
         if(isExit)
         {
             //Player must have items to proceed
-            
-
+            if(playerScript.heldItems.Contains("MedicalBag") && playerScript.heldItems.Contains("Note"))
+            {
+                //Exit room and appear outside
+                //Door open sound
+                gmAudio.gameObject.GetComponent<GameManager>().ScreenTransition();
+            }
+            else
+            {
+                if(textPrompt.text != normalPrompt)
+                {
+                    textPrompt.text = normalPrompt;
+                    StartCoroutine(PromptTimer());
+                }
+            }
         }
         else if(isTrigger)
         {

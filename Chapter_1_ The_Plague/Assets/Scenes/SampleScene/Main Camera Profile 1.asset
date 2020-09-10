@@ -74,22 +74,22 @@ MonoBehaviour:
     m_Value: 1
   fogFalloffMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.015352436, g: 0.020369098, b: 0.047169805, a: 1}
+    m_Value: {r: 0.003921569, g: 0.003921569, b: 0.007843138, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
   precisionAlpha:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   precisionAlphaDitherTexture:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: 4a3e96c03e7d7c34a8fb8f59764f1945, type: 3}
   precisionAlphaDither:
     m_OverrideState: 1
-    m_Value: 0.359
+    m_Value: 0.061
     min: 0
     max: 1
   distanceMin:
@@ -111,13 +111,13 @@ MonoBehaviour:
     m_Value: 1
   isAdditionalLayerEnabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   fogFalloffModeLayer1:
     m_OverrideState: 1
     m_Value: 2
   colorLayer1:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0.0367692, b: 0.122641504, a: 1}
+    m_Value: {r: 0.003921569, g: 0.003921569, b: 0.007843138, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -127,17 +127,17 @@ MonoBehaviour:
     min: 0
   distanceMaxLayer1:
     m_OverrideState: 1
-    m_Value: 32.24
+    m_Value: 44.64
     min: 0.00001
   heightFalloffEnabledLayer1:
     m_OverrideState: 1
     m_Value: 0
   heightMinLayer1:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   heightMaxLayer1:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 35.6
 --- !u!114 &-6250831534615111787
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -403,8 +403,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   frameLimit:
-    m_OverrideState: 0
-    m_Value: 24
+    m_OverrideState: 1
+    m_Value: 60
     min: 1
   aspectMode:
     m_OverrideState: 1
