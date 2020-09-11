@@ -9,11 +9,15 @@ public class ShotZone : MonoBehaviour
     public Shot targetShot;
     public NoiseTrigger sound;
     public bool canNoise = false;
+    public bool goToLook;
     void OnTriggerEnter (Collider c) {
         if (c.CompareTag("Player")) {
             TurnLightsOn();
             TurnLightsOff();
-            targetShot.CutToShot();
+            if(!goToLook)
+                targetShot.CutToShot();
+            else
+                targetShot.CutToLookShot();
             if(canNoise)
             {
                 sound.PlaySound();

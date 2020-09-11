@@ -18,13 +18,11 @@ public class DoorScript : MonoBehaviour
     public void OpenDoor()
     {
         doorAudio.PlayOneShot(doorOpen);
-        GetComponent<Interactable>().enabled = false;
     }
 
     public void CloseDoor()
     {
         doorAudio.PlayOneShot(doorClose);
-        oppositeDoor.enabled = true;
-        gameManager.player.transform.position = gameManager.outsidePos.position;
+        oppositeDoor.gameObject.layer = 8;
     }
 }

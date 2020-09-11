@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public DoorScript doorScript;
     public Transform outsidePos;
     public Shot outsideShot;
+    public GameObject playerHome;
+
 
     void Awake()
     {
@@ -92,6 +94,7 @@ public class GameManager : MonoBehaviour
 
     public void ScreenTransition()
     {
+        player.transform.position = outsidePos.position;
         doorScript.OpenDoor();
         UIPopup.text = "";
         playerScript.disabled = true;
@@ -102,7 +105,7 @@ public class GameManager : MonoBehaviour
     
     public IEnumerator AreaTransition()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1.5f);
         blackScreen.enabled = false;
         player.transform.position = outsidePos.position;
         playerScript.disabled = false;
@@ -110,5 +113,6 @@ public class GameManager : MonoBehaviour
         outsideShot.CutToShot();
         ambience.volume = .6f;
         doorScript.CloseDoor();
+        playerHome.SetActive(false);
     }
 }
